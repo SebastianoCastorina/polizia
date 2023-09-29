@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#verbaliByT" aria-expanded="false" aria-controls="verbaliByT">
+                Mostra Tot. Verbali per Trasgressore
+            </button>
+        </h2>
+        <div id="verbaliByT" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                @foreach (PoliziaMunicipale.Models.VerbaliByT v in ViewBag.VerbaliByT)
+                {
+                    <p>@v.Surname @v.TotVerbali</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#puntiByT" aria-expanded="false" aria-controls="puntiByT">
+                Mostra Punti Decurtati per Trasgressore
+            </button>
+        </h2>
+        <div id="puntiByT" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                @foreach (PoliziaMunicipale.Models.PuntiByT p in ViewBag.PuntiByT)
+                {
+                    <p>@p.Surname @p.TotPuntiPersi</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#mag10Punti" aria-expanded="false" aria-controls="mag10Punti">
+                Mostra Trasgressori con 10+ punti tolti per Violazioni
+            </button>
+        </h2>
+        <div id="mag10Punti" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                @foreach (PoliziaMunicipale.Models.AnMag10Punti p in ViewBag.Mag10Punti)
+                {
+                    <p>@p.Surname @p.PuntiPersi</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#amountMag400" aria-expanded="false" aria-controls="amountMag400">
+                Mostra Violazioni con Importo 400+
+            </button>
+        </h2>
+        <div id="amountMag400" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                @foreach (PoliziaMunicipale.Models.ImportoMag400 v in ViewBag.AmountMag400)
+                {
+                    <p>@v.Surname @v.Amount</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
